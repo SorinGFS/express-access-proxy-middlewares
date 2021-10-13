@@ -1,0 +1,30 @@
+{
+  "name": "express-access-proxy-middlewares",
+  "version": "1.1.1",
+  "description": "Express Access Proxy Middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SorinGFS/express-access-proxy-middlewares.git"
+  },
+  "author": {
+    "name": "SorinGFS",
+    "url": "https://github.com/SorinGFS"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "express": "^4.17.1",
+    "express-access-proxy-base": "^1.1.1",
+    "express-fingerprint": "^1.2.2",
+    "express-rate-limit": "^5.5.0",
+    "express-slow-down": "^1.4.0",
+    "method-override": "^3.0.0",
+    "mobile-detect": "^1.4.5",
+    "volleyball": "^1.5.1"
+  }
+}
