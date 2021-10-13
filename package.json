@@ -6,15 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SorinGFS/express-access-proxy-middlewares.git"
-  },
-  "author": {
-    "name": "SorinGFS",
-    "url": "https://github.com/SorinGFS"
-  },
-  "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
@@ -26,5 +17,18 @@
     "method-override": "^3.0.0",
     "mobile-detect": "^1.4.5",
     "volleyball": "^1.5.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SorinGFS/express-access-proxy-middlewares.git"
+  },
+  "author": {
+    "name": "SorinGFS",
+    "url": "https://github.com/SorinGFS"
+  },
+  "homepage": "https://github.com/SorinGFS/express-access-proxy-middlewares#readme",
+  "bugs": {
+    "url": "https://github.com/SorinGFS/express-access-proxy-middlewares/issues"
+  },
+  "license": "MIT"
 }
