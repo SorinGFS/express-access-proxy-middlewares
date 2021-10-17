@@ -6,7 +6,8 @@ const csrfProtection = require('./csrf-protection');
 const fingerprint = require('./fingerprint');
 const setDevice = require('./mobile-detect');
 const setUser = require('./set-user');
+const accessLogs = require('./access-logs');
 
-router.use(setDevice, csrfProtection, fingerprint, setUser);
+router.use(setDevice, csrfProtection, fingerprint, setUser, accessLogs);
 
 module.exports = router;
