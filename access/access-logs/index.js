@@ -9,7 +9,7 @@ const accessLogs = async (req, res, next) => {
             req.server.accessLogs.forEach((item) => (log[item] = req[item]));
         }
         req.on('end', () => {
-            req.server.Logs.insertOne({ time: new Date(start), durationMs: new Date().getTime() - start, ...log });
+            req.accessDb.getController('logs').then((db) => db.insertOne({ time: new Date(start), durationMs: new Date().getTime() - start, ...log }));
         });
     }
     next();

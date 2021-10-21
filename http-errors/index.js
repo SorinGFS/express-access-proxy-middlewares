@@ -7,9 +7,9 @@ const handleError = (err, req, res, next) => {
         const log = {};
         if (Array.isArray(req.server.errorLogs)) {
             req.server.errorLogs.forEach((item) => (log[item] = req[item]));
-            req.server.Errors.insertOne({ time: new Date(), ...log });
+            req.accessDb.getController('errors').then((db) => db.insertOne({ time: new Date(), ...log }));
         } else {
-            req.server.Errors.insertOne({ time: new Date(), ip: req.ip, ips: req.ips, method: req.method, protocol: req.protocol, hostname: req.hostname, url: req.url, message: message });
+            req.accessDb.getController('errors').then((db) => db.insertOne({ time: new Date(), ip: req.ip, ips: req.ips, method: req.method, protocol: req.protocol, hostname: req.hostname, url: req.url, message: message }));
         }
     }
     if (headers) res.set(headers);
