@@ -1,8 +1,8 @@
 [Back to Main Page](https://github.com/SorinGFS/express-access-proxy#configuration)
 
-### Authentication and Authorization
+### Authenticate
 
-This module is a custom implementation of `Auth0's JsonWebToken` library for JWT based Access Management
+This module is a custom implementation of `Auth0's JsonWebToken` library for JWT based Access Management. If this module is configured on a `server`/`location` all the incoming `authorization` tokens (jwt's) are verified to match existing access permissions and are rejected if they do not match.
 
 #### Documentation
 
@@ -10,7 +10,7 @@ This module is a custom implementation of `Auth0's JsonWebToken` library for JWT
 
 #### Configuration Methods
 
-The main objective of this module is to configure the `jwt` on which depends the way in which users are authenticated and authorized. The `jwt` can be configured in 3 ways:
+The main objective of this module is to configure the `jwt` on which depends the way in which users are authenticated. The `jwt` can be configured in 3 ways:
 
 -   automatic, by choosing or configuring existing options
 -   hardcoded, by manually editing `auth.jwt`'s compositing options
@@ -99,6 +99,18 @@ If there are several servers that use the same provider, it is mandatory that th
 }
 ```
 
+If there is an intent to use the provider's users on local project (not proxied routes) the provider must be trusted:
+
+```json
+{
+    "auth": {
+        "provider": { "name": "strapi", "id": 1337, "trusted": true }
+    }
+}
+```
+
+If a provider is trusted, then their users details will be passed to `req.site.user` object which can then be used to autorize actions on specific local routes.
+
 #### Configuration Options
 
 Couple of `jwt` authentication modes can be configured which are differentiated mainly by the way of extending the validity of the token:
@@ -176,8 +188,8 @@ Once the plan is made according to the needs, options can be added one by one wh
 ```json
 {
     "devTools": {
-        "consoleLogger": { "setUser": ["user"] },
-        "performanceTimer": ["setUser"]
+        "consoleLogger": { "authenticate": ["authenticated"] },
+        "performanceTimer": ["authenticate"]
     }
 }
 ```

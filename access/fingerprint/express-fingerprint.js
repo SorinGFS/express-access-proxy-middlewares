@@ -25,12 +25,13 @@ const device = Fingerprint({
 const userAgent = Fingerprint({
     parameters: [
         // Built-in options
-        Fingerprint.useragent,
+        // Fingerprint.useragent,
         // Fingerprint.acceptHeaders,
         // Fingerprint.geoip,
         // Custom options
         function (next, req, res) {
             next(null, {
+                ua: req.headers['user-agent'],
                 ip: req.ip,
                 ips: req.ips,
                 hostname: req.hostname,
@@ -61,11 +62,11 @@ const geoip = Fingerprint({
 });
 
 const fingerprint = (profile) => {
-    if (profile == 'device') {
+    if (profile === 'device') {
         return device;
-    } else if (profile == 'userAgent') {
+    } else if (profile === 'userAgent') {
         return userAgent;
-    } else if (profile == 'geoip') {
+    } else if (profile === 'geoip') {
         return geoip;
     }
 };

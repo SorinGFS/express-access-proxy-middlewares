@@ -3,7 +3,7 @@
 const handleError = (err, req, res, next) => {
     const { statusCode = 500, expose, message, stack, headers, ...rest } = err;
     // log server errors (app errors are NOT logged into db, you may implement your own solution here)
-    if (req.server && req.server.Errors) {
+    if (req.server && req.server.errorLogs) {
         const log = {};
         if (Array.isArray(req.server.errorLogs)) {
             req.server.errorLogs.forEach((item) => (log[item] = req[item]));

@@ -5,9 +5,9 @@ const router = require('express').Router();
 const csrfProtection = require('./csrf-protection');
 const fingerprint = require('./fingerprint');
 const setDevice = require('./mobile-detect');
-const setUser = require('./set-user');
+const authenticate = require('./authenticate');
 const accessLogs = require('./access-logs');
 
-router.use(setDevice, csrfProtection, fingerprint, setUser, accessLogs);
+router.use(setDevice, csrfProtection, fingerprint, authenticate, accessLogs);
 
 module.exports = router;
