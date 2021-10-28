@@ -49,7 +49,7 @@ Using `consoleLogger` only makes sense in request modifier modules. The list of 
 
 1. setDevice
 1. fingerprint
-1. setUser
+1. authenticate
 
 **Note:** The list will be updated as the project develops.
 
@@ -75,7 +75,7 @@ Every module requested in `consoleLogger` should be placed as a property of it, 
             {
                 "^/api": {
                     "devTools": {
-                        "consoleLogger": { "setUser": ["var1", "var2.prop1.prop2"]  }
+                        "consoleLogger": { "authenticate": ["var1", "var2.prop1.prop2"]  }
                     }
                 }
             }
@@ -84,7 +84,7 @@ Every module requested in `consoleLogger` should be placed as a property of it, 
 }
 ```
 
-**Note:** In this example `consoleLogger.fingerprint` will be inactive at `/api`, instead `consoleLogger.setUser` will be activated.
+**Note:** In this example `consoleLogger.fingerprint` will be inactive at `/api`, instead `consoleLogger.authenticate` will be activated.
 
 **Note:** This is just an example of how the configuration is structured, don't copy-paste without analyzing it.
 
