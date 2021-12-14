@@ -201,6 +201,7 @@ Once the plan is made according to the needs, options can be added one by one wh
 | mode            | string enum, false |         | FALSE    | This option allows to enable or disable the specified auth mode at single level.                                     |     |
 | provider.name   | string enum        |         | TRUE     | Auth provider's name defines the proxy plugin used to capture the token.                                             |     |
 | provider.id     | number, string     |         | FALSE    | If multiple providers with the same name exists this will make the difference.                                       |     |
+| provider.trusted  | boolean          |         | FALSE    | If true provider's users details will be saved in database and their roles can then be used by the server.    |     |
 | algorithm       | string enum        | HS256   | FALSE    | The algorithm used in jwt.header. Use RS256,RS384,RS512 for refreshTokens.                                           |     |
 | noTimestamp     | boolean            |         | FALSE    | JWT will include an iat (issued at) claim by default unless noTimestamp:true.                                        | iat |
 | audience        | boolean, original  |         | FALSE    | If true will use config serverName, otherwise will use the given value as audience.                                  | aud |
