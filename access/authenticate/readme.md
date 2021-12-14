@@ -230,7 +230,7 @@ Once the plan is made according to the needs, options can be added one by one wh
 | clockTimestamp   | number            |         | FALSE    | Time in seconds that should be used as the current time for all necessary comparisons. |     |
 | maxAge           | number, vercel/ms |         | FALSE    | The maximum allowed age for tokens to still be valid. If number means seconds.         |     |
 | nonce            | string            |         | FALSE    | String value to check nonce claim, used on Open ID for the ID Tokens.                  |     |
-| refreshInSeconds | number            | 84600   | FALSE    | Max interval in seconds in which refreshing access tokens is possible.           |     |
+| refreshInSeconds | number            | 86400   | FALSE    | Max interval in seconds in which refreshing access tokens is possible.           |     |
 
 **Note:** `maxInactivitySeconds`, `expiresIn` and `refreshInSeconds` have default values because if user omits to set one of them they will give errors in runtime.
 
