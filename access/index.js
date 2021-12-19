@@ -2,12 +2,13 @@
 // https://expressjs.com/en/4x/api.html#express.router
 const router = require('express').Router();
 
-const csrfProtection = require('./csrf-protection');
-const fingerprint = require('./fingerprint');
 const setDevice = require('./mobile-detect');
+const csrfProtection = require('./csrf-protection');
+const localization = require('./localization');
+const fingerprint = require('./fingerprint');
 const authenticate = require('./authenticate');
 const accessLogs = require('./access-logs');
 
-router.use(setDevice, csrfProtection, fingerprint, authenticate, accessLogs);
+router.use(setDevice, csrfProtection, localization, fingerprint, authenticate, accessLogs);
 
 module.exports = router;
