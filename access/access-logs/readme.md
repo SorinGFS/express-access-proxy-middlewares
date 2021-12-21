@@ -28,6 +28,8 @@ req.device;
 
 To enable logs for a `server` or `location` block use `accessLogs` directive as boolean or array of `req` properties like following:
 
+**File:** `config/servers/available/my-server.json`
+
 ```json
 {
     "serverName": "myDomain.com",
