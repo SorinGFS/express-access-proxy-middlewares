@@ -41,7 +41,7 @@ function device(req, res, next) {
             device.browser.os = detect.os();
         }
 
-        req.device = device;
+        req.site.device = device;
     }
     next();
 }

@@ -29,9 +29,10 @@ console.log(req.params); // relative to mounted path
 console.log(req.url); // not a native Express property, it is inherited from Node, used in urlRewrite
 console.log(req.route);
 // ========= project specific vars =========
-console.log(req.server); // set by setServer
-console.log(req.device);
-console.log(req.single); // used in API
+console.log(req.server);
+console.log(req.site.device); // set by mobileDetect
+console.log(req.site.localization); // set by localization
+console.log(req.site.single); // used in API
 ```
 
 However, this method has 2 problems:

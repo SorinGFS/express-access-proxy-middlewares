@@ -15,7 +15,7 @@ const device = Fingerprint({
                 ip: req.ip,
                 ips: req.ips,
                 hostname: req.hostname,
-                device: req.device, // mobileDetect
+                device: req.site.device, // mobileDetect
             });
         },
     ],
@@ -35,27 +35,27 @@ const userAgent = Fingerprint({
                 ip: req.ip,
                 ips: req.ips,
                 hostname: req.hostname,
-                device: req.device, // mobileDetect
+                device: req.site.device, // mobileDetect
             });
         },
     ],
 });
 
-// strongest (requires geoip enableds)
-// to enable geoip: cd node_modules/geoip-lite && npm run-script updatedb license_key=YOUR_LICENSE_KEY
+// strongest (requires localization enabled)
 const geoip = Fingerprint({
     parameters: [
         // Built-in options
         // Fingerprint.useragent,
         // Fingerprint.acceptHeaders,
-        Fingerprint.geoip,
+        // Fingerprint.geoip,
         // Custom options
         function (next, req, res) {
             next(null, {
                 // ip: req.ip,
                 // ips: req.ips,
                 hostname: req.hostname,
-                device: req.device, // mobileDetect
+                device: req.site.device, // mobileDetect
+                localization: req.site.localization, // localization
             });
         },
     ],

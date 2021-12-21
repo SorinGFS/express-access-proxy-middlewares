@@ -2,7 +2,7 @@
 
 ### Mobile Detect
 
-This module will detect the device by comparing patterns against a given User-Agent string. You can find out information about the device rendering your web page. As a result this module sets `req.device` object which can be then used in another modules (fingerprint, logs, ...). Knowing that the result is based on the given User-Agent which can be faked `req.device` should never be used to block requests.
+This module will detect the device by comparing patterns against a given User-Agent string. You can find out information about the device rendering your web page. As a result this module sets `req.site.device` object which can be then used in another modules (fingerprint, logs, ...). Knowing that the result is based on the given User-Agent which can be faked `req.site.device` should never be used to block requests.
 
 #### Documentation
 
