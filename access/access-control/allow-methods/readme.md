@@ -34,6 +34,7 @@ To enable method firewall for a `server` or `location` block use `accessControl.
 ```
 
 **Note:** in this example `accessControl.allowMethods` is enabled at `server` level, overwritten at `/admin/` route since in server `config` arrays are not merged but replaced by the deeper ones, and disabled at `/public/` route.
+
 **Note:** These are just examples of how the configuration is structured, don't copy-paste without analyzing them.
 
 #### Status
