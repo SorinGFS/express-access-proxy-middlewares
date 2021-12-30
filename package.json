@@ -1,6 +1,6 @@
 {
   "name": "express-access-proxy-middlewares",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Express Access Proxy Middlewares",
   "main": "index.js",
   "dependencies": {
